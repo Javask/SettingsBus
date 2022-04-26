@@ -9,11 +9,17 @@ else()
   set(SETTINGSBUS_CXX_FLAGS ${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic)
 endif()
 
+option(SETTINGSBUS_BUILD_DAEMON "Build daemon" ON)
+option(SETTINGSBUS_BUILD_APP "Build gui application" ON)
 option(SETTINGSBUS_BUILD_TESTS "Build test executables" ON)
 
-set(QT_COMPONENTS Widgets Core DBus)
+set(QT_COMPONENTS Core DBus)
+if(${SETTINGSBUS_BUILD_APP})
+  list(APPEND QT_COMPONENTS Widgets)
+endif()
+
 if(${SETTINGSBUS_BUILD_TESTS})
-   list(APPEND QT_COMPONENTS Test)
+  list(APPEND QT_COMPONENTS Test)
 endif()
 
 find_package(Qt6 REQUIRED COMPONENTS ${QT_COMPONENTS})
