@@ -4,5 +4,5 @@ file(GLOB_RECURSE SETTINGSBUSCORE_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_
 "${CMAKE_CURRENT_LIST_DIR}/*.h" 
 "${CMAKE_CURRENT_LIST_DIR}/*.ui")
 add_library(SettingsBusCore OBJECT ${SETTINGSBUSCORE_FILES})
-target_link_libraries(SettingsBusCore PRIVATE Qt6::Widgets Qt6::Core Qt6::DBus nlohmann_json::nlohmann_json)
+target_link_libraries(SettingsBusCore PRIVATE Qt6::Widgets Qt6::Core Qt6::DBus)
 set_target_properties(SettingsBusCore PROPERTIES CXX_STANDARD 20 COMPILE_OPTIONS "${SETTINGSBUS_CXX_FLAGS}")
