@@ -24,3 +24,5 @@ QDBusVariant DBusServiceClient::query(const QString& str) {
   }
   return msg.value();
 }
+
+void DBusServiceClient::stopService() { iface->call("stop"); }

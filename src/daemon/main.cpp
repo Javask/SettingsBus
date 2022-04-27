@@ -1,6 +1,6 @@
 #include <QApplication>
 #include "defines.h"
-#include "DBusService.h"
+#include "DBusDaemon.h"
 #include <iostream>
 #include <QtDBus/QtDBus>
 
@@ -14,6 +14,6 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  auto service = DBusService(&app);
+  auto service = DBusDaemon(&app);
   return app.exec();
 }

@@ -10,7 +10,7 @@ class DBusDaemon : public QObject {
   ~DBusDaemon();
 
  public slots:
-  void aboutToQuit();
+  void doQuit();
   void onServiceStart(const QString& name);
   void onServiceStop(const QString& name);
 

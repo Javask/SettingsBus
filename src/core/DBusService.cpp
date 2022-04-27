@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <QtDBus/QtDBus>
 #include <iostream>
+#include <QApplication>
 
 DBusService::DBusService(QObject* parent) : QDBusAbstractAdaptor(parent) {
   QDBusConnection::sessionBus().registerObject("/", parent);
@@ -17,3 +18,5 @@ DBusService::~DBusService() {}
 QDBusVariant DBusService::query(const QString& query) {
   return QDBusVariant(query);
 }
+
+void DBusService::stop() { emit onStop(); }

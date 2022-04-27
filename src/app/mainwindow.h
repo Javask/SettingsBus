@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "DBusService.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,7 +15,6 @@ class MainWindow : public QMainWindow {
   ~MainWindow();
 
  private:
-  DBusService *dbusInterface;
   Ui::MainWindow *ui;
 };
 

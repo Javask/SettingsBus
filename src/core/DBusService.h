@@ -4,6 +4,7 @@
 #include <QtDBus/QDBusVariant>
 #include <QtDBus/QDBusServiceWatcher>
 #include "defines.h"
+#include <QObject>
 
 class DBusService : public QDBusAbstractAdaptor {
   Q_OBJECT
@@ -15,4 +16,8 @@ class DBusService : public QDBusAbstractAdaptor {
 
  public slots:
   QDBusVariant query(const QString& query);
+  void stop();
+
+ signals:
+  void onStop();
 };

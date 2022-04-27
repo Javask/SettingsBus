@@ -7,6 +7,5 @@ if(SETTINGSBUSCORE_TEST_FILES)
   set_target_properties(SettingsBusCoreTests PROPERTIES CXX_STANDARD 20 COMPILE_OPTIONS "${SETTINGSBUS_CXX_FLAGS}")
   target_include_directories(SettingsBusCoreTests PRIVATE ${SETTINGSBUSCORE_SRC_DIR})
 
-  enable_testing()
-  add_test(SettingsBusCoreTests SettingsBusCoreTests)
+  add_test(SettingsBusCoreTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/SettingsBusCoreTests)
 endif()

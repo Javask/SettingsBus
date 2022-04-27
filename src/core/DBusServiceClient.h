@@ -11,6 +11,7 @@ class DBusServiceClient : public QObject {
 
  public slots:
   QDBusVariant query(const QString &str);
+  void stopService();
 
  private:
   QDBusInterface *iface;
