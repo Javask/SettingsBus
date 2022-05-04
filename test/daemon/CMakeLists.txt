@@ -8,4 +8,5 @@ if(SETTINGSBUSDAEMON_TEST_FILES)
   target_include_directories(SettingsBusDaemonTests PRIVATE ${SETTINGSBUSCORE_SRC_DIR} ${SETTINGSBUSDAEMON_SRC_DIR})
 
   add_test(SettingsBusDaemonTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/SettingsBusDaemonTests)
+  set_tests_properties(SettingsBusDaemonTests PROPERTIES ENVIRONMENT ${TEST_ENVIRONMENT_VARS})
 endif()

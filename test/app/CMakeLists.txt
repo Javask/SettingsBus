@@ -8,4 +8,5 @@ if(SETTINGSBUSAPP_TEST_FILES)
   target_include_directories(SettingsBusAppTests PRIVATE ${SETTINGSBUSCORE_SRC_DIR} ${SETTINGSBUSAPP_SRC_DIR})
 
   add_test(SettingsBusAppTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/SettingsBusAppTests)
+  set_tests_properties(SettingsBusAppTests PROPERTIES ENVIRONMENT ${TEST_ENVIRONMENT_VARS})
 endif()

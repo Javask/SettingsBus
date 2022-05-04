@@ -1,3 +1,4 @@
+set(TEST_ENVIRONMENT_VARS "QT_QPA_PLATFORM=offscreen")
 add_subdirectory(core)
 if(${SETTINGSBUS_BUILD_APP})
   add_subdirectory(app)
